@@ -39,9 +39,46 @@
       </div>
     </section>
 
-    <section id="blog">
+    <section id="blog" class="mb-16">
       <h3 class="text-2xl font-semibold mb-4">Blog</h3>
       <p class="text-gray-400">Blog posts will appear here. Use the dashboard to add new entries!</p>
+    </section>
+
+    <section id="contact" class="mb-16">
+      <h3 class="text-2xl font-semibold mb-6">Contact Me</h3>
+
+      <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" class="space-y-4">
+        <!-- Netlify hidden input -->
+        <input type="hidden" name="form-name" value="contact" />
+        
+        <!-- Spam bot trap (honeypot) -->
+        <p class="hidden">
+          <label>Don’t fill this out: <input name="bot-field" /></label>
+        </p>
+
+        <div>
+          <label for="name" class="block text-sm text-gray-300">Name</label>
+          <input type="text" id="name" name="name" required
+                 class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600">
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm text-gray-300">Email</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600">
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm text-gray-300">Message</label>
+          <textarea id="message" name="message" rows="5" required
+                    class="w-full p-2 rounded bg-gray-800 text-white border border-gray-600"></textarea>
+        </div>
+
+        <button type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded">
+          Send Message
+        </button>
+      </form>
     </section>
   </main>
 
@@ -50,17 +87,16 @@
   </footer>
 
   <!-- Dynamically load header -->
-<script>
-  fetch('/partials/header.html')
-    .then(response => response.text())
-    .then(data => {
-      document.getElementById('site-header').innerHTML = data;
-    })
-    .catch(error => {
-      console.error('Header load failed:', error);
-    });
-</script>
-
+  <script>
+    fetch('/partials/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Header load failed:', error);
+      });
+  </script>
 
 </body>
 </html>
