@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact – Leandro Correia de Freitas</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Header will be injected here -->
+  <div id="site-header"></div>
+
+  <main class="container mx-auto py-12 px-6">
+    <section class="text-center mb-16">
+      <h2 class="text-3xl font-semibold mb-6">Contact Me</h2>
+      <p class="text-gray-400 mb-8">Fill out the form below and I'll get back to you.</p>
+
+      <form name="contact" method="POST" data-netlify="true" class="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
+        <input type="hidden" name="form-name" value="contact">
+
+        <div class="mb-4">
+          <label class="block text-left mb-1" for="name">Name</label>
+          <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-left mb-1" for="email">Email</label>
+          <input type="email" id="email" name="email" required class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600">
+        </div>
+
+        <div class="mb-4">
+          <label class="block text-left mb-1" for="message">Message</label>
+          <textarea id="message" name="message" rows="5" required class="w-full p-2 rounded bg-gray-700 text-white border border-gray-600"></textarea>
+        </div>
+
+        <button type="submit" class="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-6 rounded">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-700">
+    &copy; 2025 Leandro Correia de Freitas. All rights reserved.
+  </footer>
+
+  <!-- Inject header -->
+  <script>
+    fetch('/partials/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Header load failed:', error);
+      });
+  </script>
+</body>
+</html>
