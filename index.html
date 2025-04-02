@@ -7,17 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <header class="p-6 bg-gray-800 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-xl font-bold">lcfreitas.com</h1>
-      <nav class="space-x-4">
-        <a href="#home" class="hover:text-gray-400">Home</a>
-        <a href="#projects" class="hover:text-gray-400">Projects</a>
-        <a href="#blog" class="hover:text-gray-400">Blog</a>
-        <a href="/admin" class="hover:text-gray-400">Dashboard</a>
-      </nav>
-    </div>
-  </header>
+
+  <!-- Header will be injected here -->
+  <div id="site-header"></div>
 
   <main class="container mx-auto py-12 px-6">
     <section id="home" class="text-center mb-16">
@@ -56,5 +48,18 @@
   <footer class="text-center text-gray-500 text-sm py-6 border-t border-gray-700">
     &copy; 2025 Leandro Correia de Freitas. All rights reserved.
   </footer>
+
+  <!-- JavaScript to dynamically inject header -->
+  <script>
+    fetch('/partials/header.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('site-header').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Header load failed:', error);
+      });
+  </script>
+
 </body>
 </html>
