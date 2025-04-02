@@ -33,13 +33,31 @@
         <!-- Left/Main Content -->
         <div class="md:col-span-2 space-y-10">
 
+          <!-- TryHackMe Badge -->
+          <div class="bg-gray-800 p-4 rounded-lg shadow-md">
+            <h4 class="text-xl font-semibold mb-4">TryHackMe Badges</h4>
+            <div class="w-full overflow-hidden rounded-lg shadow">
+              <iframe 
+                src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3301840"
+                class="w-full h-28 md:h-24"
+                style="border:none;"
+                loading="lazy">
+              </iframe>
+            </div>
+          </div>
+
           <!-- Certifications -->
           <div class="bg-gray-800 p-4 rounded-lg shadow-md">
             <h4 class="text-xl font-semibold mb-4">Certifications</h4>
-            <ul class="list-disc list-inside text-gray-400 space-y-2">
-              <li>CompTIA Network+ (in progress)</li>
-              <li>TryHackMe: Beginner Paths</li>
-              <li>Linux Essentials (planned)</li>
+            <ul class="list-disc list-inside text-gray-400 space-y-3">
+              <li>
+                <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-IRWVOTPNME.pdf" 
+                   target="_blank" 
+                   class="text-blue-400 hover:underline">
+                   Introduction to Cyber Security – TryHackMe
+                </a>
+              </li>
+              <li class="text-gray-500 italic">More certifications coming soon (CompTIA, etc.)</li>
             </ul>
           </div>
 
@@ -61,26 +79,13 @@
               </div>
             </div>
           </div>
-
-          <!-- TryHackMe Badges -->
-<div class="bg-gray-800 p-4 rounded-lg shadow-md">
-  <h4 class="text-xl font-semibold mb-4">TryHackMe Badges</h4>
-  <div class="w-full overflow-hidden rounded-lg shadow">
-    <iframe 
-      src="https://tryhackme.com/api/v2/badges/public-profile?userPublicId=3301840"
-      class="w-full h-80"
-      style="border:none;"
-      loading="lazy">
-    </iframe>
-  </div>
-</div>
+        </div>
 
         <!-- Right Sidebar -->
         <div class="space-y-6">
           <div class="bg-gray-800 p-4 rounded-lg shadow-md sticky top-20">
             <h4 class="text-xl font-semibold mb-2">Latest LinkedIn Posts</h4>
             <p class="text-gray-400 text-sm mb-2">Embed coming soon...</p>
-            <!-- Placeholder for LinkedIn embed -->
             <div class="bg-gray-700 h-48 flex items-center justify-center text-gray-500 text-sm rounded">
               LinkedIn embed placeholder
             </div>
