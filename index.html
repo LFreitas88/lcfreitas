@@ -49,16 +49,14 @@
     &copy; 2025 Leandro Correia de Freitas. All rights reserved.
   </footer>
 
-  <!-- JavaScript to dynamically inject header -->
+  <!-- Dynamically load header -->
   <script>
-    fetch('/partials/header.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('site-header').innerHTML = data;
+    fetch('../partials/header.html')
+      .then(res => res.text())
+      .then(html => {
+        document.getElementById('site-header').innerHTML = html;
       })
-      .catch(error => {
-        console.error('Header load failed:', error);
-      });
+      .catch(err => console.error('Header load failed:', err));
   </script>
 
 </body>
