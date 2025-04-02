@@ -3,15 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <title>Admin Panel</title>
-    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+    <!-- Netlify CMS core stylesheet -->
+    <link rel="stylesheet" href="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.css" />
   </head>
   <body>
-    <script>
-      window.CMS_MANUAL_INIT = true;
-    </script>
+    <!-- Mount point -->
+    <div id="cms"></div>
+
+    <!-- Netlify CMS core script -->
+    <script src="https://unpkg.com/netlify-cms@2.10.192/dist/netlify-cms.js"></script>
+
+    <!-- Optional manual init (not needed if config.yml is in the right place) -->
     <script>
       CMS.init();
     </script>
-    <div id="cms"></div>
   </body>
 </html>
