@@ -1,8 +1,15 @@
-<!-- header.html -->
-<header class="p-6 bg-gray-800 shadow-md">
+<!-- /partials/header.html -->
+<header class="p-4 bg-gray-800 shadow-md">
   <div class="container mx-auto flex justify-between items-center">
     <h1 class="text-xl font-bold">lcfreitas.com</h1>
-    <nav class="space-x-4">
+
+    <!-- Mobile Menu Button -->
+    <button id="mobile-menu-button" class="md:hidden focus:outline-none">
+      <img src="/assets/menu-icon.png" alt="Menu" class="w-6 h-6">
+    </button>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex space-x-4">
       <a href="/" class="hover:text-gray-400">Home</a>
       <a href="#projects" class="hover:text-gray-400">Projects</a>
       <a href="#blog" class="hover:text-gray-400">Blog</a>
@@ -10,4 +17,13 @@
       <a href="/admin" class="hover:text-gray-400">Dashboard</a>
     </nav>
   </div>
+
+  <!-- Mobile Nav Dropdown -->
+  <nav id="mobile-menu" class="hidden md:hidden flex flex-col px-4 pt-2 pb-4 space-y-2 bg-gray-700">
+    <a href="/" class="hover:text-gray-300">Home</a>
+    <a href="#projects" class="hover:text-gray-300">Projects</a>
+    <a href="#blog" class="hover:text-gray-300">Blog</a>
+    <a href="/contact" class="hover:text-gray-300">Contact</a>
+    <a href="/admin" class="hover:text-gray-300">Dashboard</a>
+  </nav>
 </header>
